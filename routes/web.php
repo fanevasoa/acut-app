@@ -27,6 +27,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/aumonier', function () {
-    return \App\Livewire\Pages\Aumonier\Dashboard\Index::class;
-})->name('aumonier');
+Route::get('/aumonier',\App\Livewire\Pages\Aumonier\Dashboard\Index::class)->name('aumonier');
