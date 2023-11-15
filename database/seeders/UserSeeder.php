@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
 
         $user->assignRole('admin');
 
-        $roles =[
+        $roles = [
             'aumonie',
             'aine_spirituel',
             'president',
