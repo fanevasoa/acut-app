@@ -17,6 +17,17 @@ return new class extends Migration
             $table->text('contenu');
             $table->timestamps();
         });
+
+        Schema::create('livret_chants', function (Blueprint $table) {
+            $table->id();
+            $table->string('nom');
+        });
+
+        Schema::create('location_chant_dans_livre', function (Blueprint $table) {
+            $table->foreignId('id_chant')->references('id')->on('chants');
+            $table->foreignId('id_livret_chant')->references('id')->on('livret_chants');
+            $table->integer('numero_page');
+        });
     }
 
     /**
@@ -24,6 +35,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('location_chant_dans_livre');
         Schema::dropIfExists('chants');
+        Schema::dropIfExists('livret_chants');
     }
 };
