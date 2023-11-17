@@ -2,12 +2,17 @@
 
 namespace App\Livewire\Pages\Liturgie;
 
-use Livewire\Component;
+use Illuminate\Support\Facades\Lang;
 
-class NavigationMenu extends Component
+class NavigationMenu extends \App\Livewire\NavigationMenu
 {
-    public function render()
+    public function setMenus()
     {
-        return view('livewire.pages.liturgie.navigation-menu');
+        $this->menus= [
+            [
+                'label'     => Lang::get('liturgie.organisation-liturgie'),
+                'routeName' => 'welcome',
+            ],
+        ];
     }
 }

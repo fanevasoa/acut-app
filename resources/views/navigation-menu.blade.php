@@ -12,9 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
-                        {{ __('Dashboard') }}
+                    @if(count($menus)>0)
+                    @foreach($menus as $menu)
+                    <x-nav-link href="{{ route($menu['routeName']) }}" :active="request()->routeIs($menu['routeName'])">
+                        {{ $menu['label'] }}
                     </x-nav-link>
+                    @endforeach
+                    @endif
                 </div>
             </div>
 
@@ -22,7 +26,7 @@
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
-                        <x-dropdown-native-livewire align="right" width="60">
+                        <x-dropdown-lc align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
@@ -67,13 +71,13 @@
                                     @endif
                                 </div>
                             </x-slot>
-                        </x-dropdown-native-livewire>
+                        </x-dropdown-lc>
                     </div>
                 @endif
 
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
-                    <x-dropdown-native-livewire align="right" width="48">
+                    <x-dropdown-lc align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
@@ -120,7 +124,7 @@
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
-                    </x-dropdown-native-livewire>
+                    </x-dropdown-lc>
                 </div>
             </div>
 
