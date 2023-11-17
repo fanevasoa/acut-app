@@ -52,9 +52,9 @@
         @endif
 
         <div class="flex items-center mt-5">
-            <x-button wire:click="confirmLogout" wire:loading.attr="disabled">
+            <x-button-lc wire:click="confirmLogout" wire:loading.attr="disabled">
                 {{ __('Log Out Other Browser Sessions') }}
-            </x-button>
+            </x-button-lc>
 
             <x-action-message class="ml-3" on="loggedOut">
                 {{ __('Done.') }}
@@ -71,7 +71,7 @@
                 {{ __('Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.') }}
 
                 <div class="mt-4" x-data="{}" x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <x-input type="password" class="mt-1 block w-3/4"
+                    <x-input-lc type="password" class="mt-1 block w-3/4"
                                 autocomplete="current-password"
                                 placeholder="{{ __('Password') }}"
                                 x-ref="password"
@@ -87,11 +87,11 @@
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                <x-button class="ml-3"
+                <x-button-lc class="ml-3"
                             wire:click="logoutOtherBrowserSessions"
                             wire:loading.attr="disabled">
                     {{ __('Log Out Other Browser Sessions') }}
-                </x-button>
+                </x-button-lc>
             </x-slot>
         </x-dialog-modal>
     </x-slot>

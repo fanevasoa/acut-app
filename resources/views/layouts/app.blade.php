@@ -21,8 +21,11 @@
 <x-banner/>
 
 <div class="min-h-screen bg-gray-100">
-    @livewire('navigation-menu')
-
+    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('admin'))
+    <livewire:pages.admin.navigation-menu/>
+    @elseif(\Illuminate\Support\Facades\Auth::user()->hasRole('responsable_liturgie'))
+    <livewire:pages.liturgie.navigation-menu/>
+    @endif
     <!-- Page Heading -->
 
 
