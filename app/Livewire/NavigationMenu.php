@@ -20,6 +20,6 @@ class NavigationMenu extends Component
 
     public function setMenus()
     {
-        $this->menus=[];
+        $this->menus = [];
     }
 }

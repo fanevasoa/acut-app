@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Livewire\Pages\Liturgie\GererLiturgie;
+namespace Tests\Feature\Livewire\Pages\Liturgie\Dashboard;
 
-use App\Livewire\Pages\Liturgie\GererLiturgie\Index;
+use App\Livewire\Pages\Liturgie\Dashboard\Index;
 use Livewire\Livewire;
 use Tests\TestCase;
 

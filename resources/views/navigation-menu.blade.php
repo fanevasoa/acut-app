@@ -143,9 +143,13 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('welcome') }}" :active="request()->routeIs('welcome')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            @if(count($menus)>0)
+                @foreach($menus as $menu)
+                    <x-responsive-nav-link href="{{ route($menu['routeName']) }}" :active="request()->routeIs($menu['routeName'])">
+                        {{ $menu['label'] }}
+                    </x-responsive-nav-link>
+                @endforeach
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

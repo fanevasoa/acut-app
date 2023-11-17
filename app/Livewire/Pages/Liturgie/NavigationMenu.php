@@ -8,10 +8,14 @@ class NavigationMenu extends \App\Livewire\NavigationMenu
 {
     public function setMenus()
     {
-        $this->menus= [
+        $this->menus = [
+            [
+                'label'     => Lang::get('liturgie.dashboard'),
+                'routeName' => 'liturgie.index',
+            ],
             [
                 'label'     => Lang::get('liturgie.organisation-liturgie'),
-                'routeName' => 'welcome',
+                'routeName' => 'liturgie.gerer',
             ],
         ];
     }
