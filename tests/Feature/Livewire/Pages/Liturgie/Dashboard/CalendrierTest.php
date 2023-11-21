@@ -3,8 +3,6 @@
 namespace Tests\Feature\Livewire\Pages\Liturgie\Dashboard;
 
 use App\Livewire\Pages\Liturgie\Dashboard\Calendrier;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 

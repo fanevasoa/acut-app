@@ -1,21 +1,35 @@
 <div>
-    <div class=" font-bold text-4xl flex justify-center py-5 text-gray-600">
-        Calendrier Liturgique
+    <div class=" font-bold text-4xl text-center py-5 text-gray-600">
+        Calendrier
     </div>
-    <div class="relative flex justify-center">
-        <div class="bg-white grid grid-cols-12 w-full mx-12 rounded-lg shadow-lg p-2">
-            <div>Janvier</div>
-            <div>Fevrier</div>
-            <div>Mars</div>
-            <div>Avril</div>
-            <div>Mey</div>
-            <div>Juin</div>
-            <div>Juillet</div>
-            <div>Aout</div>
-            <div>Septembre</div>
-            <div>Octobre</div>
-            <div>Novembre</div>
-            <div>Decembre</div>
+    <div class=" flex justify-center">
+        <div class="w-5/6">
+            <div class="grid grid-cols-6 space-x-8">
+                <x-datetime-picker label="Date de début" placeholder="Date de début" without-timezone without-time
+                                   wire:model.live="filters.minDate"
+                                   display-format="dddd DD MMMM YYYY "/>
+                <x-datetime-picker label="Date de fin" placeholder="Date de fin" without-timezone without-time
+                                   wire:model.live="filters.maxDate"
+                                   display-format="dddd DD MMMM YYYY "/>
+            </div>
+
+            <table class="my-6 w-full bg-white rounded-lg shadow-lg p-2">
+                <thead>
+                @foreach($colonnes as $col)
+                    <th>{{$col}}</th>
+                @endforeach
+                </thead>
+
+                <tbody>
+                @for($d=0; $d<31; $d++)
+                    <tr>
+                        @for($m=1; $m<13; $m++)
+                            <td class="text-center">{{$days[$m][$d] ?? ''}}</td>
+                        @endfor
+                    </tr>
+                @endfor
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
