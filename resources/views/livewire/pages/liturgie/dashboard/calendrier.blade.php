@@ -1,4 +1,5 @@
 <div>
+    <x-notifications align="center" blur="md" z-index="z-50" />
     <div class=" font-bold text-4xl text-center py-5 text-gray-600">
         Calendrier
     </div>
@@ -23,9 +24,9 @@
                 <tbody>
                 @for($d=0; $d<31; $d++)
                     <tr>
-                        @for($m=1; $m<13; $m++)
+                        @foreach($colonnes as $m)
                             <td class="text-center">{{$days[$m][$d] ?? ''}}</td>
-                        @endfor
+                        @endforeach
                     </tr>
                 @endfor
                 </tbody>
