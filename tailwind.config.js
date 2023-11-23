@@ -15,7 +15,7 @@ export default {
     ],
 
     presets: [
-        import('./vendor/wireui/wireui/tailwind.config.js')
+        require('./vendor/wireui/wireui/tailwind.config.js')
     ],
 
     theme: {
