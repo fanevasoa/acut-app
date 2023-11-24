@@ -3,6 +3,6 @@
         <div class="my-6">
             <span class="text-2xl font-bold">Organiser vos session</span>
         </div>
-        <livewire:pages.liturgie.gerer-liturgie.ltg-form/>
+        <livewire:pages.liturgie.gerer-liturgie.ltg-form wire:key="ltg_form"/>
     </div>
 </div>
