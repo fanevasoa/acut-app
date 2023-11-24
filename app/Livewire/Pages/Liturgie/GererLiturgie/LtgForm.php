@@ -8,6 +8,8 @@ class LtgForm extends Component
 {
     public $fields = [];
 
+    public $j;
+
     public $optionList = [
         [
             'label' => 'Chant',
