@@ -1,4 +1,5 @@
-<div class="w-full">
+<div class="w-full ">
+
     @for($cs=0; $cs < $maxChronoSong; $cs++)
     <div class="grid grid-cols-7">
         <x-select xs placeholder="Ordre" :options="$chronoOptions" wire:model="fields.{{$cs}}.order" wire:selected="changeSongsOrder({{$cs}})" :id="rand(1,999999)"/>

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Pages\Liturgie\GererLiturgie;
 
-use App\Livewire\Pages\Liturgie\GererLiturgie\Components\SongForm;
+use App\Livewire\Pages\Utils\SongForm;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -54,6 +54,7 @@ class LtgForm extends Component
         $this->fields[max($idx, 0)] = [
             'name' => null,
             'type' => null,
+            'songs' => [],
         ];
     }
 
@@ -84,6 +85,7 @@ class LtgForm extends Component
             $this->fields[$ch] = [
                 'name' => null,
                 'type' => null,
+                'songs' => [],
             ];
             $this->maxChronoSong[$ch] = 1;
         }
@@ -95,6 +97,7 @@ class LtgForm extends Component
             $this->fields[max($i - 1, 0)] = $this->fields[max($i - 2, 0)] ?? [
                 'name' => null,
                 'type' => null,
+                'songs' => [],
             ];
             $this->maxChronoSong[$i - 1] = 1;
         }

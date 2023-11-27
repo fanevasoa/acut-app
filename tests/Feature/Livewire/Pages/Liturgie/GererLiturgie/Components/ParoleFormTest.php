@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Livewire\Pages\Liturgie\GererLiturgie\Components;
 
-use App\Livewire\Pages\Liturgie\GererLiturgie\Components\ParoleForm;
+use App\Livewire\Pages\Utils\ParoleForm;
 use Livewire\Livewire;
 use Tests\TestCase;
 

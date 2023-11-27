@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Pages\Liturgie\GererLiturgie\Components;
+namespace App\Livewire\Pages\Utils;
 
 use App\Livewire\Pages\Liturgie\GererLiturgie\LtgForm;
 use Livewire\Attributes\On;
@@ -22,7 +22,7 @@ class SongForm extends Component
 
     public function render()
     {
-        return view('livewire.pages.liturgie.gerer-liturgie.components.song-form');
+        return view('livewire.pages.utils.song-form');
     }
 
     #[On('add-song')]

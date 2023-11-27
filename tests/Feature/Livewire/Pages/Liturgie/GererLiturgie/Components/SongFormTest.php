@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Livewire\Pages\Liturgie\GererLiturgie\Components;
 
-use App\Livewire\Pages\Liturgie\GererLiturgie\Components\SongForm;
+use App\Livewire\Pages\Utils\SongForm;
 use Livewire\Livewire;
 use Tests\TestCase;
 
