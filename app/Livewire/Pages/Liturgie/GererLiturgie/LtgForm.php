@@ -2,13 +2,13 @@
 
 namespace App\Livewire\Pages\Liturgie\GererLiturgie;
 
+use App\Livewire\Pages\Liturgie\GererLiturgie\Components\SongForm;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class LtgForm extends Component
 {
     public $fields = [];
-
-    public $j;
 
     public $optionList = [
         [
@@ -35,8 +35,15 @@ class LtgForm extends Component
         return view('livewire.pages.liturgie.gerer-liturgie.ltg-form');
     }
 
-    public function formHandler()
+    #[On('add-songs-fields-in-program')]
+    public function handleAddSongFields($associatedChronology, array $songs)
     {
+        $this->fields[$associatedChronology]['songs'] = $songs;
+    }
+
+    public function formHandler($programChronology)
+    {
+        $this->dispatch('add-songs-in-program', idProgram: $programChronology)->to(SongForm::class);
         $this->saveLine();
     }
 
