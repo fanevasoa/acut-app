@@ -2,26 +2,18 @@
     <x-card title="Définir la session regroupement:">
         <form wire:submit.prevent="formHandler">
             <div class="flex-col justify-start">
-                <div><x-datetime-picker label="Date du jour :" without-time/></div>
-                <div>
-                    <x-input label="Thème :"/></div>
-                <div>
-                    <x-input label="Nom :"/></div>
-                <div>
-                    <x-input label="Type :"/></div>
-                <div>
-                    <x-textarea label="Introduction:"/></div>
-
+                <x-datetime-picker label="Date du jour :" wire:model="fields.date"
+                                   display-format="dddd DD MMMM YYYY à HH:mm" without-timezone time-format="24"/>
+                <x-input label="Thème :" wire:model="fields.theme"/>
+                <x-input label="Nom :" wire:model="fields.name"/>
+                <x-select label="Type :" wire:model="fields.type" :options="$listeTypeOptions" option-label="label" option-value="value"/>
+                <x-textarea label="Introduction:" wire:model="fields.introduction"/>
             </div>
 
-            <x-slot name="footer">
-
-                <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center pt-2">
                 <x-button positive type="submit" label="Enregistrer"/>
-                <x-button negative type="submit" label="Annuler"/>
-                </div>
-            </x-slot>
+                <x-button negative label="Annuler"/>
+            </div>
         </form>
     </x-card>
-
 </div>

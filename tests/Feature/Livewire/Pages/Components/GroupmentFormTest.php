@@ -3,8 +3,6 @@
 namespace Tests\Feature\Livewire\Pages\Components;
 
 use App\Livewire\Pages\Utils\GroupmentForm;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 

@@ -52,8 +52,8 @@ class LtgForm extends Component
         $this->maxChrono++;
         $this->moveUpData($idx);
         $this->fields[max($idx, 0)] = [
-            'name' => null,
-            'type' => null,
+            'name'  => null,
+            'type'  => null,
             'songs' => [],
         ];
     }
@@ -83,8 +83,8 @@ class LtgForm extends Component
     {
         for ($ch = 0; $ch < $this->maxChrono; $ch++) {
             $this->fields[$ch] = [
-                'name' => null,
-                'type' => null,
+                'name'  => null,
+                'type'  => null,
                 'songs' => [],
             ];
             $this->maxChronoSong[$ch] = 1;
@@ -95,8 +95,8 @@ class LtgForm extends Component
     {
         for ($i = $this->maxChrono; $i > $idx; $i--) {
             $this->fields[max($i - 1, 0)] = $this->fields[max($i - 2, 0)] ?? [
-                'name' => null,
-                'type' => null,
+                'name'  => null,
+                'type'  => null,
                 'songs' => [],
             ];
             $this->maxChronoSong[$i - 1] = 1;

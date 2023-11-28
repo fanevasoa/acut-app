@@ -1,5 +1,7 @@
 <div x-data="{chronologie: 0}">
-
+    <div class="my-6">
+        <span class="text-2xl font-bold">Organiser de deroulement de votre regroupement</span>
+    </div>
 
     @for($c=0;$c<$maxChrono ;$c++)
         <form wire:submit.prevent="formHandler({{$c}})">
@@ -17,10 +19,10 @@
                 </div>
                 <div class="col-span-6">
                     <livewire:pages.utils.song-form :fields="$fields[$c]['songs']"
-                        wire:key="{{rand(1,999999)}}"/>
+                                                    wire:key="{{rand(1,999999)}}"/>
                 </div>
                 <div class="flex-row w-full">
-                    <x-button rounded type="submit" positive icon="check" label="Save" id="random()" />
+                    <x-button rounded type="submit" positive icon="check" label="Save" id="random()"/>
                     <x-button rounded rose icon="x" label="Cancel"
                               wire:click.prevent="removeProgrammeSession({{$c}})" :id="rand(1,999999)"/>
                 </div>
@@ -29,8 +31,8 @@
     @endfor
 
     <div class="flex justify-between">
-    <x-button.circle xs primary icon="plus" wire:click.prevent="insertProgrammeSession({{$maxChrono}})"
-                     :id="rand(1,999999)"/>
-    <x-button negative md label="Annuler" x-on:click="openFrom=false"/>
-</div>
+        <x-button.circle xs primary icon="plus" wire:click.prevent="insertProgrammeSession({{$maxChrono}})"
+                         :id="rand(1,999999)"/>
+        <x-button negative md label="Annuler" x-on:click="openFrom=false"/>
+    </div>
 </div>
