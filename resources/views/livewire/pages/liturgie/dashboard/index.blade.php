@@ -1,3 +1,3 @@
 <div>
-    <livewire:pages.liturgie.dashboard.calendrier/>
+    <livewire:pages.liturgie.dashboard.calendrier />
 </div>
